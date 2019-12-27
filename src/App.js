@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
-import config from '../config'
+import config from '../src/config'
 import LoginPage from '../src/routes/LoginPage'
+import RegistrationPage from '../src/routes/RegistrationPage'
 
 import './App.css';
 
@@ -13,6 +14,7 @@ class App extends Component {
       <BrowserRouter>
         <div className='App'>
           <Route path='/login' exact component={LoginPage} />
+          <Route path='/register' exact component={RegistrationPage} />
         </div>
       </BrowserRouter>
     )

@@ -11,7 +11,7 @@ const AuthApiService = {
         })
             .then(res =>
                 (!res.ok)
-                    ? res.json().then(event => Promise.reject(e))
+                    ? res.json().then(event => Promise.reject(event))
                     : res.json()
             )
     },
