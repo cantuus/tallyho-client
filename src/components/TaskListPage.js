@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TallyhoApiService from '../services/tallyho-api-service'
-//import TaskItem from '../components/TaskListItem'
+import TaskItem from '../components/TaskListItem'
 
 export default class TaskListPage extends Component {
 
@@ -24,14 +24,11 @@ export default class TaskListPage extends Component {
     renderTasks() {
         const tasks = this.state.tasks
         return tasks.map(task =>
-            // <TaskItem
-            //     key={task.id}
-            //     title={task.title}
-            //     image={task.image}
-            // />
-            <div>
-                {task.title}
-            </div>
+            <TaskItem
+                key={task.id}
+                title={task.title}
+                image={task.image}
+            />
         )
     }
 
