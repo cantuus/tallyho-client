@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import config from '../src/config'
 import LoginPage from '../src/routes/LoginPage'
 import RegistrationPage from '../src/routes/RegistrationPage'
-
+import TaskListMain from '../src/routes/TaskListMain'
 import './App.css';
 
 class App extends Component {
@@ -15,6 +15,7 @@ class App extends Component {
         <div className='App'>
           <Route path='/login' exact component={LoginPage} />
           <Route path='/register' exact component={RegistrationPage} />
+          <Route path='/tasks' component={TaskListMain} />
         </div>
       </BrowserRouter>
     )
