@@ -7,6 +7,7 @@ export default class TaskListItem extends Component {
             <section>
                 <h3 className="task-title">{this.props.title}</h3>
                 <img src={this.props.image} alt={`task of ${this.props.image}`} />
+                <button>Delete</button>
             </section>
         )
     }

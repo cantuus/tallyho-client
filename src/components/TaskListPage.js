@@ -11,6 +11,7 @@ export default class TaskListPage extends Component {
     componentDidMount() {
         TallyhoApiService.getTasks()
             .then(response => {
+                console.log(response)
                 this.setState({
                     tasks: response
                 })
