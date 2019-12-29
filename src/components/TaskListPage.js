@@ -21,6 +21,12 @@ export default class TaskListPage extends Component {
             })
     }
 
+    handleDeleteTask = taskId => {
+        this.setState({
+            tasks: this.state.tasks.filter( task => task.id !== taskId)
+        });
+    };
+
 
     renderTasks() {
         const tasks = this.state.tasks

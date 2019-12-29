@@ -5,6 +5,7 @@ import config from '../src/config'
 import LoginPage from '../src/routes/LoginPage'
 import RegistrationPage from '../src/routes/RegistrationPage'
 import TaskListMain from '../src/routes/TaskListMain'
+import TaskForm from '../src/components/TaskForm'
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route path='/login' exact component={LoginPage} />
           <Route path='/register' exact component={RegistrationPage} />
           <Route path='/tasks' component={TaskListMain} />
+          <Route path='/add-task' component={TaskForm} />
         </div>
       </BrowserRouter>
     )

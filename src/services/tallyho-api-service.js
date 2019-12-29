@@ -14,9 +14,11 @@ const TallyhoApiService = {
                     : res.json()
             )
     },
-    getTask(taskId) {
+    getTaskToDelete(taskId) {
         return fetch(`${config.API_ENDPOINT}/tasks/${taskId}`, {
+            method: 'DELETE',
             headers: {
+                'content-type': 'application/json',
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })

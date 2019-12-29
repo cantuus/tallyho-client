@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TasklistPage from '../../src/components/TaskListPage'
 import TokenService from '../../src/services/token-service'
 import { Link } from 'react-router-dom'
+import SideNavPage from '../routes/SideNavPage'
 
 export default class TaskListMain extends Component {
 
@@ -25,6 +26,7 @@ export default class TaskListMain extends Component {
                     </Link>
                     </div>
                 </nav>
+                <SideNavPage />
                 <TasklistPage />
             </div>
         )
