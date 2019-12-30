@@ -19,6 +19,7 @@ export default class LoginForm extends Component {
         })
         const { email, password } = event.target;
 
+
         AuthApiService.postLogin({
             email: email.value,
             password: password.value,

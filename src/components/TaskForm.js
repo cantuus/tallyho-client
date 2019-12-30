@@ -8,6 +8,16 @@ export default class TaskForm extends Component {
     state = {
         taskTitle: { value: '', touched: false },
         taskImage: { value: '', touched: false },
+        location: {},
+        history: {
+            push: () => { },
+        },
+    }
+
+    handlePostSuccess = () => {
+        const { location, history } = this.props
+        const destination = (location.state || {}).from || '/tasks'
+        history.push(destination)
     }
 
     setTaskTitle = taskTitle => {
@@ -36,18 +46,22 @@ export default class TaskForm extends Component {
         else if (taskImage.length < 6) {
             return 'Task Image must larger than 6 characters'
         }
+        else if (!taskImage.includes('https://')) {
+            return `Task Image must be a Url starting with 'https://'`
+        }
     }
 
-    handleTaskSubmit = () => {
+    handleTaskSubmit = (event) => {
+        event.preventDefault();
         let taskTitle = this.state.taskTitle.value.trim();
         let taskImage = this.state.taskImage.value;
 
         TallyhoApiService.postTask(taskTitle, taskImage)
-            .then(res =>
-                console.log(res)
-            )
+            .then(res => {
+                this.handlePostSuccess();
+            })
             .catch(error => {
-                console.error({ error })
+                console.error({ error });
             })
     }
 
