@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import config from '../config'
 import TokenService from '../services/token-service'
+import TallyhoApiService from '../services/tallyho-api-service'
 
 export default class TaskForm extends Component {
 
@@ -32,8 +33,8 @@ export default class TaskForm extends Component {
         if (taskImage === 0) {
             return "Task Image is required"
         }
-        else if (taskImage.length < 6 || taskImage.length > 100) {
-            return 'Task Image must between 6 and 100 characters long'
+        else if (taskImage.length < 6) {
+            return 'Task Image must larger than 6 characters'
         }
     }
 
@@ -41,28 +42,9 @@ export default class TaskForm extends Component {
         let taskTitle = this.state.taskTitle.value.trim();
         let taskImage = this.state.taskImage.value;
 
-        let jsonObj = {
-            title: taskTitle,
-            image: taskImage
-        }
-
-        let request = JSON.stringify(jsonObj)
-
-        fetch(`${config.API_ENDPOINT}/tasks`, {
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `bearer ${TokenService.getAuthToken()}`,
-            },
-            body: request,
-        })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(event => Promise.reject(event))
-                    : res.json()
-            )
+        TallyhoApiService.postTask(taskTitle, taskImage)
             .then(res =>
                 console.log(res)
-                //add Task
             )
             .catch(error => {
                 console.error({ error })
@@ -73,7 +55,7 @@ export default class TaskForm extends Component {
         return (
             <div>
                 <h1 className="task-form-title">Create Task</h1>
-                <form className="task-form" onSubmit={() => this.handleTaskSubmit()}>
+                <form className="task-form" onSubmit={this.handleTaskSubmit}>
                     <label htmlFor="task-title">Add Title
                 {this.state.taskTitle.touched &&
                             <p className="error">{this.validateTaskTitle()}</p>}

@@ -6,9 +6,28 @@ import SideNavPage from '../routes/SideNavPage'
 
 export default class TaskListMain extends Component {
 
+    state = {
+        tasks: []
+    }
+
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
     }
+
+    renderTasks = response => {
+        this.setState({
+            tasks: response
+        })
+    }
+
+    handleDeleteTask = taskId => {
+        this.setState({
+            tasks: this.state.tasks.filter(task => task.id !== taskId)
+        });
+    };
+
+    //todo: going to add context
+
 
 
     render() {
@@ -27,7 +46,11 @@ export default class TaskListMain extends Component {
                     </div>
                 </nav>
                 <SideNavPage />
-                <TasklistPage />
+                <TasklistPage
+                    renderTasks={this.renderTasks}
+                    tasks={this.state.tasks}
+                    handleDeleteTask={this.handleDeleteTask}
+                />
             </div>
         )
     }

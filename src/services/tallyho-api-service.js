@@ -22,11 +22,13 @@ const TallyhoApiService = {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(event => Promise.reject(event))
-                    : res.json()
-            )
+            .then(res => {
+                if (res.ok) {
+                    return {};
+                } else {
+                    return res.json().then(event => Promise.reject(event))
+                }
+            })
     },
     postTask(title, image) {
         return fetch(`${config.API_ENDPOINT}/tasks`, {

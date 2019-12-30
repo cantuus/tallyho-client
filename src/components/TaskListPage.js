@@ -4,37 +4,27 @@ import TaskItem from '../components/TaskListItem'
 
 export default class TaskListPage extends Component {
 
-    state = {
-        tasks: []
-    };
-
     componentDidMount() {
         TallyhoApiService.getTasks()
             .then(response => {
-                console.log(response)
-                this.setState({
-                    tasks: response
-                })
+                this.props.renderTasks(response)
             })
             .catch(error => {
                 console.error({ error })
             })
     }
 
-    handleDeleteTask = taskId => {
-        this.setState({
-            tasks: this.state.tasks.filter( task => task.id !== taskId)
-        });
-    };
-
 
     renderTasks() {
-        const tasks = this.state.tasks
+        const tasks = this.props.tasks
+        console.log(tasks)
         return tasks.map(task =>
             <TaskItem
                 key={task.id}
+                taskId={task.id}
                 title={task.title}
                 image={task.image}
+                handleDeleteTask={this.props.handleDeleteTask}
             />
         )
     }
