@@ -9,11 +9,11 @@ const TokenService = {
   getAuthToken() {
     return window.localStorage.getItem(config.TOKEN_KEY)
   },
-  // todo: use this to decode the jwt auth token to get user id
-  decodeToken() {
-    // verify a token symmetric - synchronous
-    // var decoded = jwt.verify(token, 'shhhhh');
-    // console.log(decoded.foo) // bar
+  decodeToken(t) {
+    let token = {}
+    token.raw = t;
+    token.payload = JSON.parse(window.atob(t.split('.')[1]));
+    return (token)
   },
   clearAuthToken() {
     window.localStorage.removeItem(config.TOKEN_KEY)

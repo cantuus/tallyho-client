@@ -51,7 +51,7 @@ export default class LoginForm extends Component {
                 </div>
                 <div className='password'>
                     <label htmlFor='LoginForm_password'></label>
-                    <input className='input' required id="password-field" name='password' type="text" placeholder='Password'></input>
+                    <input className='input' required id="password-field" name='password' type="password"  placeholder='Password'></input>
                 </div>
                 <button>Login</button>
                 <div className="sign-up-block">

@@ -21,10 +21,10 @@ export default class TaskListPage extends Component {
         return tasks.map(task =>
             <TaskItem
                 key={task.id}
-                taskId={task.id}
-                title={task.title}
-                image={task.image}
+                task={task}
                 handleDeleteTask={this.props.handleDeleteTask}
+                handleToggleChecked={this.props.handleToggleChecked}
+                setToggleTask={this.props.setToggleTask}
             />
         )
     }

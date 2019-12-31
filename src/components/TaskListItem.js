@@ -7,6 +7,10 @@ export default class TaskListItem extends Component {
         this.handleClickDelete = this.handleClickDelete.bind(this)
     }
 
+    state = {
+        checked: this.props.checked
+    }
+
     handleClickDelete = event => {
         event.preventDefault();
         const taskId = this.props.taskId;
@@ -24,13 +28,29 @@ export default class TaskListItem extends Component {
 
     }
 
+    handleClickToggle = () => {
+        let newTask = this.props.task;
+        newTask.checked = !newTask.checked;
+    
+        TallyhoApiService.updateTask(newTask, newTask.id)
+            .then(res => {
+                console.log(res);
+                // this.setState({
+                    
+                // })
+            })
+            .catch(error => {
+                console.error({ error })
+            })
+    }
+
 
     render() {
         return (
             <section>
-                <h3 className="task-title">{this.props.title}</h3>
-                <img src={this.props.image} alt={`task of ${this.props.image}`} />
-                <button onClick={this.handleClickDelete}>Delete</button>
+                <h3 className="task-title">{this.props.task.title}</h3>
+                <img onClick={this.handleClickToggle} src={this.props.task.image} alt={`task of ${this.props.task.image}`} />
+                <button onClick={() => this.handleClickDelete()}>Delete</button>
             </section>
         )
     }

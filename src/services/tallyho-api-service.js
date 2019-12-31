@@ -49,6 +49,32 @@ const TallyhoApiService = {
                     return res.json();
                 }
             })
+    },
+    getTask(taskId) {
+        return fetch(`${config.API_ENDPOINT}/tasks/${taskId}`, {
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+    updateTask(newTask, taskId) {
+        return fetch(`${config.API_ENDPOINT}/tasks/${taskId}`, {
+            method: 'PATCH',
+            body: JSON.stringify(newTask),
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+            .then(res => {
+                if (!res.ok)
+                    return res.json().then(error => Promise.reject(error))
+            })
     }
 }
 
