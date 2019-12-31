@@ -8,12 +8,12 @@ export default class TaskListItem extends Component {
     }
 
     state = {
-        checked: this.props.checked
+        checked: this.props.task.checked,
+        image: this.props.task.image
     }
 
-    handleClickDelete = event => {
-        event.preventDefault();
-        const taskId = this.props.taskId;
+    handleClickDelete = () => {
+        const taskId = this.props.task.id;
         const thisProps = this.props;
         console.log(thisProps);
 
@@ -31,13 +31,16 @@ export default class TaskListItem extends Component {
     handleClickToggle = () => {
         let newTask = this.props.task;
         newTask.checked = !newTask.checked;
-    
+
+        if (this.state.checked) {
+            newTask.image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ-kMbFqjiAXzJ3W9-ODBgavLSogiAblyrWMF5ia7HfQBAt3Qy&s'
+        }
+
         TallyhoApiService.updateTask(newTask, newTask.id)
-            .then(res => {
-                console.log(res);
-                // this.setState({
-                    
-                // })
+            .then(() => {
+                this.setState({
+                    checked: !this.state.checked
+                })
             })
             .catch(error => {
                 console.error({ error })

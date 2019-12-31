@@ -26,25 +26,6 @@ export default class TaskListMain extends Component {
         });
     };
 
-    // handleToggleChecked = (taskId) => {
-    //     const tasks = this.state.tasks;
-    //     const foundTask = tasks.find(task => task.id === taskId);
-    //     const toggleTask = foundTask.checked = true;
-
-    //     if(toggleTask) {
-    //         this.setState({
-    //             tasks:  
-    //         })
-    //     }
-
-
-    // }
-
-    // handleImageToggle = (func) => {
-    //     this.setState({
-    //         tasks: task
-    //     })
-    // }
 
     //todo: going to add context
 
@@ -70,8 +51,6 @@ export default class TaskListMain extends Component {
                     renderTasks={this.renderTasks}
                     tasks={this.state.tasks}
                     handleDeleteTask={this.handleDeleteTask}
-                    handleToggleChecked={this.handleToggleChecked}
-                    setToggleTask={this.setToggledTask}
                 />
             </div>
         )

@@ -23,8 +23,6 @@ export default class TaskListPage extends Component {
                 key={task.id}
                 task={task}
                 handleDeleteTask={this.props.handleDeleteTask}
-                handleToggleChecked={this.props.handleToggleChecked}
-                setToggleTask={this.props.setToggleTask}
             />
         )
     }
