@@ -28,7 +28,7 @@ export default class SideNavPage extends Component {
                     <p className="add-task-link">
                         <Link to={`/add-task`}>
                             Add
-                    </Link>
+                        </Link>
                     </p>
                     <button onClick={this.props.setEditMode} className="edit-task-link">
                         Edit

@@ -3,6 +3,7 @@ import TasklistPage from '../../src/components/TaskListPage'
 import TokenService from '../../src/services/token-service'
 import { Link } from 'react-router-dom'
 import SideNavPage from '../routes/SideNavPage'
+import EditModePage from '../components/EditModePage'
 
 export default class TaskListMain extends Component {
 
@@ -39,6 +40,20 @@ export default class TaskListMain extends Component {
 
 
     render() {
+        let renderListOrEdit;
+
+        if (this.state.editModeOn) {
+
+            renderListOrEdit = <EditModePage />
+        }
+        else {
+            renderListOrEdit = <TasklistPage
+                renderTasks={this.renderTasks}
+                tasks={this.state.tasks}
+                handleDeleteTask={this.handleDeleteTask}
+            />
+        }
+
         return (
             <div>
                 <nav role="navigation">
@@ -57,11 +72,7 @@ export default class TaskListMain extends Component {
                     editModeOn={this.state.editModeOn}
                     setEditMode={this.setEditMode}
                 />
-                <TasklistPage
-                    renderTasks={this.renderTasks}
-                    tasks={this.state.tasks}
-                    handleDeleteTask={this.handleDeleteTask}
-                />
+                {renderListOrEdit}
             </div>
         )
     }
