@@ -32,7 +32,7 @@ export default class TaskListItem extends Component {
         let newTask = this.props.task;
         newTask.checked = !newTask.checked;
 
-        if (this.state.checked) {
+        if (!this.state.checked) {
             newTask.image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ-kMbFqjiAXzJ3W9-ODBgavLSogiAblyrWMF5ia7HfQBAt3Qy&s'
         }
 

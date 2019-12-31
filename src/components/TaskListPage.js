@@ -17,7 +17,6 @@ export default class TaskListPage extends Component {
 
     renderTasks() {
         const tasks = this.props.tasks
-        console.log(tasks)
         return tasks.map(task =>
             <TaskItem
                 key={task.id}

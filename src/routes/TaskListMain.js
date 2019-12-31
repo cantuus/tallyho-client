@@ -8,6 +8,7 @@ export default class TaskListMain extends Component {
 
     state = {
         tasks: [],
+        editModeOn: false
     }
 
     handleLogoutClick = () => {
@@ -25,6 +26,12 @@ export default class TaskListMain extends Component {
             tasks: this.state.tasks.filter(task => task.id !== taskId)
         });
     };
+
+    setEditMode = () => {
+        this.setState({
+            editModeOn: true
+        })
+    }
 
 
     //todo: going to add context
@@ -46,7 +53,10 @@ export default class TaskListMain extends Component {
                     </Link>
                     </div>
                 </nav>
-                <SideNavPage />
+                <SideNavPage
+                    editModeOn={this.state.editModeOn}
+                    setEditMode={this.setEditMode}
+                />
                 <TasklistPage
                     renderTasks={this.renderTasks}
                     tasks={this.state.tasks}
@@ -55,4 +65,4 @@ export default class TaskListMain extends Component {
             </div>
         )
     }
-}
+} 
