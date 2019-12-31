@@ -11,7 +11,17 @@ export default class SideNavPage extends Component {
 
             renderSideNav =
                 <div className="side-page-nav">
-                    <button onClick={this.props.setEditMode} className="save-button">
+                    <button onClick={this.props.setEditMode} className="back-button">
+                        Back
+                    </button>
+                </div>;
+        }
+
+        else if (this.props.addModeOn) {
+
+            renderSideNav =
+                <div className="side-page-nav">
+                    <button onClick={this.props.setAddMode} className="back-button">
                         Back
                     </button>
                 </div>;
@@ -20,10 +30,8 @@ export default class SideNavPage extends Component {
         else {
             renderSideNav =
                 <div className="side-page-nav">
-                    <button className="add-task-link">
-                        <Link to={`/add-task`}>
-                            Add
-                        </Link>
+                    <button onClick={this.props.setAddMode} className="add-task-link">
+                        Add
                     </button>
                     <button onClick={this.props.setEditMode} className="edit-task-link">
                         Edit

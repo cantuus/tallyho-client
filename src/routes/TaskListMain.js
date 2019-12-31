@@ -4,12 +4,14 @@ import TokenService from '../../src/services/token-service'
 import { Link } from 'react-router-dom'
 import SideNavPage from '../routes/SideNavPage'
 import EditModePage from '../components/EditModePage'
+import TaskForm from '../components/TaskForm'
 
 export default class TaskListMain extends Component {
 
     state = {
         tasks: [],
-        editModeOn: false
+        editModeOn: false,
+        addModeOn: false
     }
 
     handleLogoutClick = () => {
@@ -34,20 +36,38 @@ export default class TaskListMain extends Component {
         })
     }
 
+    setAddMode = () => {
+        this.setState({
+            addModeOn: !this.state.addModeOn
+        })
+    }
+
+    addTaskSuccess = () => {
+        this.setState({
+            editModeOn: false,
+            addModeOn: false
+        })
+    }
+
 
     //todo: going to add context
 
 
 
     render() {
-        let renderListOrEdit;
+        let renderPage;
 
         if (this.state.editModeOn) {
 
-            renderListOrEdit = <EditModePage />
+            renderPage = <EditModePage />
+        }
+        else if (this.state.addModeOn) {
+
+            renderPage = <TaskForm
+                addTaskSuccess={this.addTaskSuccess} />
         }
         else {
-            renderListOrEdit = <TasklistPage
+            renderPage = <TasklistPage
                 renderTasks={this.renderTasks}
                 tasks={this.state.tasks}
                 handleDeleteTask={this.handleDeleteTask}
@@ -71,8 +91,10 @@ export default class TaskListMain extends Component {
                 <SideNavPage
                     editModeOn={this.state.editModeOn}
                     setEditMode={this.setEditMode}
+                    setAddMode={this.setAddMode}
+                    addModeOn={this.state.addModeOn}
                 />
-                {renderListOrEdit}
+                {renderPage}
             </div>
         )
     }

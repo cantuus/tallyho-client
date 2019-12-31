@@ -17,7 +17,6 @@ class App extends Component {
           <Route path='/login' exact component={LoginPage} />
           <Route path='/register' exact component={RegistrationPage} />
           <Route path='/tasks' component={TaskListMain} />
-          <Route path='/add-task' component={TaskForm} />
         </div>
       </BrowserRouter>
     )

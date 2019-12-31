@@ -6,16 +6,6 @@ export default class TaskForm extends Component {
     state = {
         taskTitle: { value: '', touched: false },
         taskImage: { value: '', touched: false },
-        location: {},
-        history: {
-            push: () => { },
-        },
-    }
-
-    handlePostSuccess = () => {
-        const { location, history } = this.props
-        const destination = (location.state || {}).from || '/tasks'
-        history.push(destination)
     }
 
     setTaskTitle = taskTitle => {
@@ -56,7 +46,7 @@ export default class TaskForm extends Component {
 
         TallyhoApiService.postTask(taskTitle, taskImage)
             .then(res => {
-                this.handlePostSuccess();
+                this.props.addTaskSuccess()
             })
             .catch(error => {
                 console.error({ error });
