@@ -30,7 +30,7 @@ export default class TaskListMain extends Component {
 
     setEditMode = () => {
         this.setState({
-            editModeOn: true
+            editModeOn: !this.state.editModeOn
         })
     }
 
