@@ -39,12 +39,10 @@ export default class EditForm extends Component {
         }
     }
 
-    handleTaskEditSubmit = (event) => {
+    handleTaskSave = (event) => {
         event.preventDefault();
-        //const taskId = 
         let taskTitle = this.state.taskTitle.value.trim();
         let taskImage = this.state.taskImage.value;
-        //const task
 
         TallyhoApiService.postTask(taskTitle, taskImage)
             .then(res => {
@@ -56,54 +54,29 @@ export default class EditForm extends Component {
     }
 
     render() {
-        let renderEditField;
-        let tasks = this.props.tasks
-        let task = tasks.map(task => {
-            renderEditField = <form className="task-form" onSubmit={this.handleTaskEditSubmit}>
-                <label htmlFor="task-title">Edit Title
-        {this.state.taskTitle.touched &&
-                        <p className="error">{this.validateTaskTitle()}</p>}
-                </label>
-                <input id="task-title" type="text" value={task.title}
-                    onChange={e => this.setTaskTitle(e.target.value)} />
-
-                <label htmlFor="task-image">Edit Image
-        {this.state.taskImage.touched &&
-                        <p className="error">{this.validateTaskImage()}</p>}
-                </label>
-                <input id="task-image" type="text" value={task.image}
-                    onChange={e => this.setTaskImage(e.target.value)} />
-
-                <button disabled={
-                    this.validateTaskTitle() ||
-                    this.validateTaskImage()
-                }>Save</button>
-            </form>
-        })
         return (
             <div>
-                <h1 className="task-form-title">Edit Task</h1>
-                {/* <form className="task-form" onSubmit={this.handleTaskSubmit}>
+                <h1 className="task-form-title">Create Task</h1>
+                <form className="task-form" onSubmit={this.handleTaskSave}>
                     <label htmlFor="task-title">Add Title
                 {this.state.taskTitle.touched &&
                             <p className="error">{this.validateTaskTitle()}</p>}
                     </label>
-                    <input id="task-title" type="text" value={this.state.taskTitle.value}
+                    <input id="task-title" type="text" value={this.props.task.title}
                         onChange={e => this.setTaskTitle(e.target.value)} />
 
                     <label htmlFor="task-image">Add Image
                 {this.state.taskImage.touched &&
                             <p className="error">{this.validateTaskImage()}</p>}
                     </label>
-                    <input id="task-image" type="text" value={this.state.taskImage.value}
+                    <input id="task-image" type="text" value={this.props.task.image}
                         onChange={e => this.setTaskImage(e.target.value)} />
 
                     <button disabled={
                         this.validateTaskTitle() ||
                         this.validateTaskImage()
-                    }>Add Task</button>
-                </form> */}
-                { renderEditField }
+                    }>Save </button>
+                </form>
             </div>
         )
     }

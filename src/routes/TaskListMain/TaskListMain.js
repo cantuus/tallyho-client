@@ -3,7 +3,6 @@ import TasklistPage from '../../components/TaskListPage/TaskListPage'
 import TokenService from '../../services/token-service'
 import { Link } from 'react-router-dom'
 import SideNavPage from '../SideNavPage'
-import EditModePage from '../../components/EditModePage/EditModePage'
 import TaskForm from '../../components/TaskForm/TaskForm'
 import TallyhoApiService from '../../services/tallyho-api-service'
 
@@ -80,12 +79,7 @@ export default class TaskListMain extends Component {
     render() {
         let renderPage;
 
-        if (this.state.editModeOn) {
-
-            renderPage = <EditModePage
-                tasks={this.state.tasks} />
-        }
-        else if (this.state.addModeOn) {
+        if (this.state.addModeOn) {
 
             renderPage = <TaskForm
                 addTaskSuccess={this.addTaskSuccess} />
@@ -96,6 +90,8 @@ export default class TaskListMain extends Component {
                 tasks={this.state.tasks}
                 handleDeleteTask={this.handleDeleteTask}
                 handleClickToggle={this.handleClickToggle}
+                editModeOn={this.state.editModeOn}
+                addTaskSuccess={this.addTaskSuccess}
             />
         }
 

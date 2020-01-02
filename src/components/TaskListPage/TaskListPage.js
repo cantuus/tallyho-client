@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TallyhoApiService from '../../services/tallyho-api-service'
 import TaskItem from '../TaskListItem/TaskListItem'
+import EditModePage from '../EditModePage/EditModePage'
 
 export default class TaskListPage extends Component {
 
@@ -17,15 +18,28 @@ export default class TaskListPage extends Component {
 
     renderTasks() {
         const tasks = this.props.tasks
-        return tasks.map(task =>
-            <TaskItem
-                key={task.id}
-                task={task}
-                handleDeleteTask={this.props.handleDeleteTask}
-                handleClickToggle={this.props.handleClickToggle}
-            />
-        )
+
+        if (this.props.editModeOn) {
+            return tasks.map(task =>
+                <EditModePage
+                    key={task.id}
+                    task={task} />
+            )
+        }
+        else {
+            return tasks.map(task =>
+                <TaskItem
+                    key={task.id}
+                    task={task}
+                    handleDeleteTask={this.props.handleDeleteTask}
+                    handleClickToggle={this.props.handleClickToggle}
+                />
+            )
+        }
+
     }
+
+
 
     render() {
         return (
