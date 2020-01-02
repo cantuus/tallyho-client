@@ -7,6 +7,8 @@ import './App.css';
 import PrivateRoute from '../src/Utils/PrivateRoute'
 import PublicRoute from '../src/Utils/PublicOnlyRoute'
 import LandingPage from '../src/components/LandingPage/LandingPage'
+import NotFoundPage from '../src/components/NotFoundPage/NotFoundPage'
+import { Route, Switch } from 'react-router-dom'
 
 class App extends Component {
 
@@ -14,10 +16,13 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className='App'>
-          <PublicRoute path='/' exact component={LandingPage} />
-          <PublicRoute path='/login' exact component={LoginPage} />
-          <PublicRoute path='/register' exact component={RegistrationPage} />
-          <PrivateRoute path='/tasks' component={TaskListMain} />
+          <Switch>
+            <PublicRoute path='/' exact component={LandingPage} />
+            <PublicRoute path='/login' exact component={LoginPage} />
+            <PublicRoute path='/register' exact component={RegistrationPage} />
+            <PrivateRoute path='/tasks' component={TaskListMain} />
+            <Route component={NotFoundPage} />
+          </Switch>
         </div>
       </BrowserRouter>
     )
