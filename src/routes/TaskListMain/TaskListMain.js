@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import SideNavPage from '../SideNavPage'
 import EditModePage from '../../components/EditModePage/EditModePage'
 import TaskForm from '../../components/TaskForm/TaskForm'
+import TallyhoApiService from '../../services/tallyho-api-service'
 
 export default class TaskListMain extends Component {
 
@@ -50,6 +51,28 @@ export default class TaskListMain extends Component {
     }
 
 
+    handleClickToggle = (task) => {
+        let newTask = task;
+        newTask.checked = !newTask.checked;
+
+        TallyhoApiService.updateTask(newTask, newTask.id)
+            .then(() => {
+                let updatedTasks = this.state.tasks.map(task => {
+                    if (task.id === newTask.id) {
+                        task.checked = newTask.checked
+                    }
+                    return task
+                })
+                this.setState({
+                    tasks: updatedTasks
+                })
+            })
+            .catch(error => {
+                console.error({ error })
+            })
+    }
+
+
     //todo: going to add context
 
 
@@ -72,6 +95,7 @@ export default class TaskListMain extends Component {
                 renderTasks={this.renderTasks}
                 tasks={this.state.tasks}
                 handleDeleteTask={this.handleDeleteTask}
+                handleClickToggle={this.handleClickToggle}
             />
         }
 

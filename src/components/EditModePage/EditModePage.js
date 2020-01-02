@@ -44,7 +44,7 @@ export default class EditForm extends Component {
         //const taskId = 
         let taskTitle = this.state.taskTitle.value.trim();
         let taskImage = this.state.taskImage.value;
-        const task
+        //const task
 
         TallyhoApiService.postTask(taskTitle, taskImage)
             .then(res => {
