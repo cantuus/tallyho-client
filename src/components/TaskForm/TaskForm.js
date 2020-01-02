@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TallyhoApiService from '../services/tallyho-api-service'
+import TallyhoApiService from '../../services/tallyho-api-service'
 
 export default class TaskForm extends Component {
 

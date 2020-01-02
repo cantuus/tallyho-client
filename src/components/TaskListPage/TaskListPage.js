@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import TallyhoApiService from '../services/tallyho-api-service'
-import TaskItem from '../components/TaskListItem'
+import TallyhoApiService from '../../services/tallyho-api-service'
+import TaskItem from '../TaskListItem/TaskListItem'
 
 export default class TaskListPage extends Component {
 

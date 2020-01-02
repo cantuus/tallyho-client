@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import TasklistPage from '../../src/components/TaskListPage'
-import TokenService from '../../src/services/token-service'
+import TasklistPage from '../../components/TaskListPage/TaskListPage'
+import TokenService from '../../services/token-service'
 import { Link } from 'react-router-dom'
-import SideNavPage from '../routes/SideNavPage'
-import EditModePage from '../components/EditModePage'
-import TaskForm from '../components/TaskForm'
+import SideNavPage from '../SideNavPage'
+import EditModePage from '../../components/EditModePage/EditModePage'
+import TaskForm from '../../components/TaskForm/TaskForm'
 
 export default class TaskListMain extends Component {
 
@@ -59,7 +59,8 @@ export default class TaskListMain extends Component {
 
         if (this.state.editModeOn) {
 
-            renderPage = <EditModePage />
+            renderPage = <EditModePage
+                tasks={this.state.tasks} />
         }
         else if (this.state.addModeOn) {
 
@@ -76,8 +77,8 @@ export default class TaskListMain extends Component {
 
         return (
             <div>
-                <nav role="navigation">
-                    <div className="tallyho-logo">
+                <nav role="navigation" className="nav">
+                    <div className="tallyho-header">
                         <h1>Tallyho!</h1>
                     </div>
                     <div className='nav-logged-in'>

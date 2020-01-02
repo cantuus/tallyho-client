@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 import config from '../src/config'
 import LoginPage from '../src/routes/LoginPage'
 import RegistrationPage from '../src/routes/RegistrationPage'
-import TaskListMain from '../src/routes/TaskListMain'
-import TaskForm from '../src/components/TaskForm'
+import TaskListMain from './routes/TaskListMain/TaskListMain'
+import TaskForm from './components/TaskForm/TaskForm'
 import './App.css';
 
 class App extends Component {
