@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import AuthApiService from '../../services/auth-api-service'
 
 export default class RegistrationForm extends Component {
     static defaultProps = {
@@ -14,9 +15,19 @@ export default class RegistrationForm extends Component {
         console.log('registration form submitted')
         console.log({ email, password })
 
-        email.value = ''
-        password.value = ''
-        this.props.onRegistrationSuccess()
+        this.setState({ error: null })
+        AuthApiService.postUser({
+            email: email.value,
+            password: password.value
+        })
+            .then(user => {
+                email.value = ''
+                password.value = ''
+                this.props.onRegistrationSuccess()
+            })
+            .catch(res => {
+                this.setState({ error: res.error })
+            })
     }
 
     render() {

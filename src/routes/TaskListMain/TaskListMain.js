@@ -19,8 +19,13 @@ export default class TaskListMain extends Component {
     }
 
     renderTasks = response => {
+        let token = TokenService.getAuthToken()
+        let decodedToken = TokenService.decodeToken(token)
+        let userId = decodedToken.payload.user_id;
+        let userTasks = response.filter( task => task.user_id === userId)
+
         this.setState({
-            tasks: response
+            tasks: userTasks
         })
     }
 

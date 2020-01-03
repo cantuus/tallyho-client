@@ -8,6 +8,8 @@ export default class EditForm extends Component {
         taskImage: { value: '', touched: false },
     }
 
+    //todo: state to determine if it's been changed or not
+
     setTaskTitle = taskTitle => {
         this.setState({ taskTitle: { value: taskTitle, touched: true } });
     }

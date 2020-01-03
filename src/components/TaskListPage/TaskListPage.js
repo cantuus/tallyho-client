@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TallyhoApiService from '../../services/tallyho-api-service'
 import TaskItem from '../TaskListItem/TaskListItem'
 import EditModePage from '../EditModePage/EditModePage'
+import TokenService from '../../services/token-service'
 
 export default class TaskListPage extends Component {
 
