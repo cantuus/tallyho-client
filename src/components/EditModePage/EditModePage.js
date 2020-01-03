@@ -2,10 +2,14 @@ import React, { Component } from 'react'
 import TallyhoApiService from '../../services/tallyho-api-service'
 
 export default class EditForm extends Component {
+    constructor(props) {
+        super(props)
+        this.setTaskTitle = this.setTaskTitle.bind(this);
+    }
 
     state = {
-        taskTitle: { value: '', touched: false },
-        taskImage: { value: '', touched: false },
+        taskTitle: { value: this.props.task.title, touched: false },
+        taskImage: { value: this.props.task.image, touched: false },
     }
 
     //todo: state to determine if it's been changed or not
@@ -46,8 +50,14 @@ export default class EditForm extends Component {
         let taskTitle = this.state.taskTitle.value.trim();
         let taskImage = this.state.taskImage.value;
 
-        TallyhoApiService.postTask(taskTitle, taskImage)
-            .then(res => {
+        let newTask = {
+            id: this.props.task.id,
+            title: taskTitle,
+            image: taskImage
+        }
+
+        TallyhoApiService.updateTask(newTask, this.props.task.id)
+            .then(() => {
                 this.props.addTaskSuccess()
             })
             .catch(error => {
@@ -58,22 +68,18 @@ export default class EditForm extends Component {
     render() {
         return (
             <div>
-                <h1 className="task-form-title">Create Task</h1>
                 <form className="task-form" onSubmit={this.handleTaskSave}>
                     <label htmlFor="task-title">Add Title
-                {this.state.taskTitle.touched &&
-                            <p className="error">{this.validateTaskTitle()}</p>}
+                        {this.state.taskImage.touched && <p className="error">{this.validateTaskTitle()}</p>}
                     </label>
-                    <input id="task-title" type="text" value={this.props.task.title}
-                        onChange={e => this.setTaskTitle(e.target.value)} />
-
+                    <input  id="task-title" type="text" value={this.state.taskTitle.value} onChange={(e) => {
+                        console.log();
+                        this.setTaskTitle(e.currentTarget.value);
+                    }} />
                     <label htmlFor="task-image">Add Image
-                {this.state.taskImage.touched &&
-                            <p className="error">{this.validateTaskImage()}</p>}
+                        {this.state.taskImage.touched && <p className="error">{this.validateTaskImage()}</p>}
                     </label>
-                    <input id="task-image" type="text" value={this.props.task.image}
-                        onChange={e => this.setTaskImage(e.target.value)} />
-
+                    <input id="task-image" type="text" value={this.state.taskImage.value} onChange={e => this.setTaskImage(e.target.value)} />
                     <button disabled={
                         this.validateTaskTitle() ||
                         this.validateTaskImage()

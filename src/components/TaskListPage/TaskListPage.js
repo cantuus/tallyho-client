@@ -24,7 +24,8 @@ export default class TaskListPage extends Component {
             return tasks.map(task =>
                 <EditModePage
                     key={task.id}
-                    task={task} />
+                    task={task}
+                    addTaskSuccess={this.props.addTaskSuccess} />
             )
         }
         else {
