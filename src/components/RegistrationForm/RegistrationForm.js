@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AuthApiService from '../../services/auth-api-service'
+import { Link } from 'react-router-dom'
 
 export default class RegistrationForm extends Component {
     static defaultProps = {
@@ -46,7 +47,15 @@ export default class RegistrationForm extends Component {
                     <label htmlFor='RegistrationForm_password'></label>
                     <input className='input' required name='password' type='text' id='RegistrationForm_password' placeholder='New User Password'></input>
                 </div>
-                <button>Register</button>
+                <button>
+                    Register!
+                </button>
+                <p>Already have an account?</p>
+                <p>
+                    <Link to={'/login'}>
+                        I have an account
+                    </Link>
+                </p>
             </form>
         )
     }

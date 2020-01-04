@@ -6,6 +6,7 @@ import TokenService from '../../services/token-service'
 
 export default class TaskListPage extends Component {
 
+    
     componentDidMount() {
         TallyhoApiService.getTasks()
             .then(response => {
@@ -25,7 +26,7 @@ export default class TaskListPage extends Component {
                 <EditModePage
                     key={task.id}
                     task={task}
-                    addTaskSuccess={this.props.addTaskSuccess} />
+                    saveTaskSucess={this.props.saveTaskSucess} />
             )
         }
         else {

@@ -10,7 +10,9 @@ export default class EditForm extends Component {
     state = {
         taskTitle: { value: this.props.task.title, touched: false },
         taskImage: { value: this.props.task.image, touched: false },
+        //TODO: state - { tasktitle:..}
     }
+
 
     //todo: state to determine if it's been changed or not
 
@@ -58,7 +60,7 @@ export default class EditForm extends Component {
 
         TallyhoApiService.updateTask(newTask, this.props.task.id)
             .then(() => {
-                this.props.addTaskSuccess()
+                this.props.saveTaskSucess();
             })
             .catch(error => {
                 console.error({ error });
@@ -70,16 +72,16 @@ export default class EditForm extends Component {
             <div>
                 <form className="task-form" onSubmit={this.handleTaskSave}>
                     <label htmlFor="task-title">Add Title
-                        {this.state.taskImage.touched && <p className="error">{this.validateTaskTitle()}</p>}
+                        {this.state.taskTitle.touched && <p className="error">{this.validateTaskTitle()}</p>}
                     </label>
-                    <input  id="task-title" type="text" value={this.state.taskTitle.value} onChange={(e) => {
+                    <input type="text" value={this.state.taskTitle.value} onChange={(e) => {
                         console.log();
                         this.setTaskTitle(e.currentTarget.value);
                     }} />
                     <label htmlFor="task-image">Add Image
                         {this.state.taskImage.touched && <p className="error">{this.validateTaskImage()}</p>}
                     </label>
-                    <input id="task-image" type="text" value={this.state.taskImage.value} onChange={e => this.setTaskImage(e.target.value)} />
+                    <input type="text" value={this.state.taskImage.value} onChange={e => this.setTaskImage(e.target.value)} />
                     <button disabled={
                         this.validateTaskTitle() ||
                         this.validateTaskImage()
@@ -88,5 +90,7 @@ export default class EditForm extends Component {
             </div>
         )
     }
+
+    //TODO: get the value when the submit is run rather than using an ONCHANGE
 
 }

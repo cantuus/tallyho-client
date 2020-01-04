@@ -22,7 +22,7 @@ export default class TaskListMain extends Component {
         let token = TokenService.getAuthToken()
         let decodedToken = TokenService.decodeToken(token)
         let userId = decodedToken.payload.user_id;
-        let userTasks = response.filter( task => task.user_id === userId)
+        let userTasks = response.filter(task => task.user_id === userId)
 
         this.setState({
             tasks: userTasks
@@ -52,6 +52,18 @@ export default class TaskListMain extends Component {
             editModeOn: false,
             addModeOn: false
         })
+
+    }
+
+    saveTaskSucess = () => {
+        console.log('baby');
+        TallyhoApiService.getTasks()
+            .then(response => {
+                this.renderTasks(response)
+            })
+            .catch(error => {
+                console.error({ error })
+            })
     }
 
 
@@ -97,6 +109,7 @@ export default class TaskListMain extends Component {
                 handleClickToggle={this.handleClickToggle}
                 editModeOn={this.state.editModeOn}
                 addTaskSuccess={this.addTaskSuccess}
+                saveTaskSucess={this.saveTaskSucess}
             />
         }
 
