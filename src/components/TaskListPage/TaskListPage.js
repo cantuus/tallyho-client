@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TallyhoApiService from '../../services/tallyho-api-service'
 import TaskItem from '../TaskListItem/TaskListItem'
 import EditModePage from '../EditModePage/EditModePage'
-import TokenService from '../../services/token-service'
+import './TaskListPage.css'
 
 export default class TaskListPage extends Component {
 
@@ -46,7 +46,7 @@ export default class TaskListPage extends Component {
 
     render() {
         return (
-            <section className='task=list-page'>
+            <section className='task-list-page'>
                 {this.renderTasks()}
             </section>
         )

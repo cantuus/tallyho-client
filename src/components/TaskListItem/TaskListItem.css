@@ -1,0 +1,25 @@
+.task-item {
+    background-color: #ff8a5c;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.task-image {
+    max-height:150px;
+}
+
+.task-image-checked {
+    max-height: 150px;
+}
+
+.task-delete {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+.fa-trash-alt:hover {
+    color:#fcf9ea;
+}

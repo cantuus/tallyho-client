@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './SideNavPage.css'
 
 
 export default class SideNavPage extends Component {
@@ -21,7 +22,7 @@ export default class SideNavPage extends Component {
 
             renderSideNav =
                 <div className="side-page-nav">
-                    <button onClick={this.props.setAddMode} className="back-button">
+                    <button onClick={this.props.setAddMode} className="back-button side-button">
                         Back
                     </button>
                 </div>;
@@ -30,10 +31,10 @@ export default class SideNavPage extends Component {
         else {
             renderSideNav =
                 <div className="side-page-nav">
-                    <button onClick={this.props.setAddMode} className="add-task-link">
+                    <button onClick={this.props.setAddMode} className="add-task-link side-button">
                         Add
                     </button>
-                    <button onClick={this.props.setEditMode} className="edit-task-link">
+                    <button onClick={this.props.setEditMode} className="edit-task-link side-button">
                         Edit
                     </button>
                 </div>
