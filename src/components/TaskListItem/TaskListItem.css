@@ -23,3 +23,18 @@
 .fa-trash-alt:hover {
     color:#fcf9ea;
 }
+
+
+@media screen and (min-width: 500px) {
+    .task-item {
+        margin-right: 10rem;
+        margin-left: 10rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .task-item {
+        margin-right: 32rem;
+        margin-left: 32rem;
+    }
+}

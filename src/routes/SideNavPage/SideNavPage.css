@@ -6,7 +6,7 @@
     z-index: 10;
     display: flex;
     flex-direction: column;
-    margin-right: 18rem;
+    max-width: 66px
 }
 
 .add-task-link {
@@ -35,3 +35,19 @@
     color: #ff8a5c;
     border: 0.1em solid
     }
+
+
+@media screen and (min-width: 500px) {
+    .side-page-nav {
+        top: 135px;
+        left: 57px;
+        }
+    }
+
+
+@media screen and (min-width: 800px) {
+.side-page-nav {
+    top: 135px;
+    left: 292px;
+    }
+}

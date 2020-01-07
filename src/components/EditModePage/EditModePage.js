@@ -105,7 +105,7 @@ export default class EditForm extends Component {
     render() {
         return (
             <div className="task-form-container">
-                <form className="task-form" onSubmit={this.handleTaskSave}>
+                <form id="edit-form" className="task-form" onSubmit={this.handleTaskSave}>
                     <label htmlFor="task-title">Edit Title
                         {this.state.taskTitle.touched && <p className="error">{this.validateTaskTitle()}</p>}
                     </label>

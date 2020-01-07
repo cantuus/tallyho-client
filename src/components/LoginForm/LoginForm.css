@@ -62,4 +62,22 @@
     width: 200px;
     height: 6px;    
 }
-    
+
+@media screen and (min-width: 500px) {
+    .login-form {
+    margin-right: 7em;
+    margin-left: 7em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    .login-form {
+        margin-right: 35em;
+        margin-left: 35em;
+        padding-top: 3em;
+        padding-bottom: 3em;
+        }
+}

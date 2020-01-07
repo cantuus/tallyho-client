@@ -15,6 +15,11 @@
     transition: all 0.2s;
 }
 
+.toggle-save:hover {
+    background-color:#fcf9ea;
+    color: #ff8a5c;
+}
+
 .toggle-saved {
     background: none;
     box-shadow: none;
@@ -47,4 +52,11 @@ input {
     width: 280px;
     height: 6px;    
 }
+
+@media screen and (min-width: 800px) {
+    #edit-form {
+        margin-left: 38em;
+        margin-right: 36.5em;
+        }
+    }
 
