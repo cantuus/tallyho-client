@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TallyhoApiService from '../../services/tallyho-api-service'
+import './TaskForm.css'
 
 export default class TaskForm extends Component {
 
@@ -55,24 +56,24 @@ export default class TaskForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="task-form-page">
                 <h1 className="task-form-title">Create Task</h1>
                 <form className="task-form" onSubmit={this.handleTaskSubmit}>
                     <label htmlFor="task-title">Add Title
                 {this.state.taskTitle.touched &&
                             <p className="error">{this.validateTaskTitle()}</p>}
                     </label>
-                    <input id="task-title" type="text" value={this.state.taskTitle.value}
+                    <input required id="task-title" type="text" value={this.state.taskTitle.value}
                         onChange={e => this.setTaskTitle(e.target.value)} />
 
                     <label htmlFor="task-image">Add Image
                 {this.state.taskImage.touched &&
                             <p className="error">{this.validateTaskImage()}</p>}
                     </label>
-                    <input id="task-image" type="text" value={this.state.taskImage.value}
+                    <input required id="task-image" type="text" value={this.state.taskImage.value}
                         onChange={e => this.setTaskImage(e.target.value)} />
 
-                    <button disabled={
+                    <button className="add-button" disabled={
                         this.validateTaskTitle() ||
                         this.validateTaskImage()
                     }>Add Task</button>

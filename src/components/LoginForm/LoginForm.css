@@ -54,4 +54,12 @@
 .sub-header {
         font-family: 'Indie Flower', cursive;
     }
+
+.front-input {
+    border-radius: 25px;
+    border: 2px solid #0f4c75;
+    padding: 20px; 
+    width: 200px;
+    height: 6px;    
+}
     

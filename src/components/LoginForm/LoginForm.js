@@ -48,11 +48,11 @@ export default class LoginForm extends Component {
                 <h2 className="sub-header">Ready for a new day?</h2>
                 <div className='email'>
                     <label htmlFor='LoginForm_email'></label>
-                    <input className='input' required id="email-field" name='email' type="text" placeholder='Email'></input>
+                    <input className='front-input' required id="email-field" name='email' type="text" placeholder='Email'></input>
                 </div>
                 <div className='password'>
                     <label htmlFor='LoginForm_password'></label>
-                    <input className='input' required id="password-field" name='password' type="password"  placeholder='Password'></input>
+                    <input className='front-input' required id="password-field" name='password' type="password"  placeholder='Password'></input>
                 </div>
                 <button className="login-button">Login</button>
                 <div className="sign-up-block">

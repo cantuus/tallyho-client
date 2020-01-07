@@ -12,7 +12,7 @@ export default class SideNavPage extends Component {
 
             renderSideNav =
                 <div className="side-page-nav">
-                    <button onClick={this.props.setEditMode} className="back-button">
+                    <button onClick={this.props.setEditMode} className="back-button side-button">
                         Back
                     </button>
                 </div>;

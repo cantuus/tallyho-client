@@ -1,0 +1,49 @@
+
+.task-form-page {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4em;
+}
+
+.task-form-title {
+    font-family: 'Indie Flower', cursive;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1rem;
+}
+
+#task-image {
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+
+.add-button {
+    background: none;
+    box-shadow: none;
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border: 0.1em solid #0f4c75;
+    border-radius:1em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    color:#fcf9ea;
+    background-color:#0f4c75;
+    text-align:center;
+    transition: all 0.2s;
+    }
+
+.add-button:hover{
+    background-color:#fcf9ea;
+    color: #ff8a5c;
+    border: 0.1em solid
+    }

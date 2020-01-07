@@ -42,11 +42,11 @@ export default class RegistrationForm extends Component {
                 <h2 className="sub-header">It'll just take a second!</h2>
                 <div className='email'>
                     <label htmlFor='RegistrationForm_email'></label>
-                    <input className='input' required name='email' type='text' id='RegistrationForm_email' placeholder='New User Email'></input>
+                    <input className='front-input' required name='email' type='text' id='RegistrationForm_email' placeholder='New User Email'></input>
                 </div>
                 <div className='password'>
                     <label htmlFor='RegistrationForm_password'></label>
-                    <input className='input' required name='password' type='text' id='RegistrationForm_password' placeholder='New User Password'></input>
+                    <input className='front-input' required name='password' type='text' id='RegistrationForm_password' placeholder='New User Password'></input>
                 </div>
                 <button className="register-button">
                     Register!

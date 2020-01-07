@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TallyhoApiService from '../../services/tallyho-api-service'
+import './EditModePage.css'
 
 export default class EditForm extends Component {
     constructor(props) {
@@ -10,8 +11,10 @@ export default class EditForm extends Component {
     state = {
         taskTitle: { value: this.props.task.title, touched: false },
         taskImage: { value: this.props.task.image, touched: false },
-        //TODO: state - { tasktitle:..}
+        toggleSave: false
     }
+
+
 
 
     //todo: state to determine if it's been changed or not
@@ -61,31 +64,63 @@ export default class EditForm extends Component {
         TallyhoApiService.updateTask(newTask, this.props.task.id)
             .then(() => {
                 this.props.saveTaskSucess();
+                this.setState({
+                    toggleSave: true
+                })
             })
             .catch(error => {
                 console.error({ error });
             })
     }
 
+    toggleSave = () => {
+        let isSaved;
+
+        if(this.state.toggleSave) {
+            isSaved = "toggle-saved"
+        }
+        
+        else{
+            isSaved= "toggle-save"
+        }
+
+        return isSaved
+
+    }
+
+    changeSaveText = () => {
+        let save;
+
+        if(this.state.toggleSave) {
+            save = 'Saved!'
+        }
+        
+        else{
+            save= "Save"
+        }
+
+        return save
+    }
+
     render() {
         return (
-            <div>
+            <div className="task-form-container">
                 <form className="task-form" onSubmit={this.handleTaskSave}>
-                    <label htmlFor="task-title">Add Title
+                    <label htmlFor="task-title">Edit Title
                         {this.state.taskTitle.touched && <p className="error">{this.validateTaskTitle()}</p>}
                     </label>
                     <input type="text" value={this.state.taskTitle.value} onChange={(e) => {
                         console.log();
                         this.setTaskTitle(e.currentTarget.value);
                     }} />
-                    <label htmlFor="task-image">Add Image
+                    <label htmlFor="task-image">Edit Image
                         {this.state.taskImage.touched && <p className="error">{this.validateTaskImage()}</p>}
                     </label>
                     <input type="text" value={this.state.taskImage.value} onChange={e => this.setTaskImage(e.target.value)} />
-                    <button disabled={
+                    <button className={this.toggleSave()} disabled={
                         this.validateTaskTitle() ||
                         this.validateTaskImage()
-                    }>Save </button>
+                    }>{this.changeSaveText()} </button>
                 </form>
             </div>
         )
