@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import TasklistPage from '../../components/TaskListPage/TaskListPage'
 import TokenService from '../../services/token-service'
 import { Link } from 'react-router-dom'
-import SideNavPage from '../SideNavPage'
+import SideNavPage from '../SideNavPage/SideNavPage'
 import TaskForm from '../../components/TaskForm/TaskForm'
 import TallyhoApiService from '../../services/tallyho-api-service'
+import './TaskListMain.css'
 
 export default class TaskListMain extends Component {
 
@@ -115,13 +116,14 @@ export default class TaskListMain extends Component {
 
         return (
             <div>
-                <nav role="navigation" className="nav">
+                <nav role="navigation" className="nav-bar">
                     <div className="tallyho-header">
                         <h1>Tallyho!</h1>
                     </div>
-                    <div className='nav-logged-in'>
+                    <div className="log-button">
                         <Link
                             onClick={this.handleLogoutClick}
+                            className="toggle-log"
                             to='/login'>
                             Logout
                     </Link>

@@ -1,0 +1,50 @@
+.tallyho-header {
+    font-family: 'Indie Flower', cursive;
+    margin-left: 1em;
+}
+
+.toggle-log {
+    color: black;
+    text-decoration: none;
+    padding-top: 2rem;
+    padding-bottom: 2.2rem;
+    padding-right: 2.3rem;
+    padding-left: 2rem;
+}
+
+.log-button {
+    margin-top: 1em;
+    background: none;
+    box-shadow: none;
+    display:inline-block;
+    border: 0.1em solid #49beb7;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#49beb7;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.toggle-log:hover{
+    background-color:#ff8a5c;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 6px;
+    background-color: #49beb7;
+    text-decoration: none;
+  }
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+}

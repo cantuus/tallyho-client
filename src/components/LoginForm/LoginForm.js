@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import TokenService from '../../services/token-service'
 import { Link } from 'react-router-dom'
+import './LoginForm.css'
 
 export default class LoginForm extends Component {
     static defaultProps = {
@@ -42,9 +43,9 @@ export default class LoginForm extends Component {
         return (
             <form className='login-form' onSubmit={this.handleSubmitJwtAuth}>
                 <div role='alert'>
-                    {error && <p className='error'>{error}</p>}
+                    {error && <p className='black'>{error}</p>}
                 </div>
-                <h2>Ready for a new day?</h2>
+                <h2 className="sub-header">Ready for a new day?</h2>
                 <div className='email'>
                     <label htmlFor='LoginForm_email'></label>
                     <input className='input' required id="email-field" name='email' type="text" placeholder='Email'></input>
@@ -53,11 +54,11 @@ export default class LoginForm extends Component {
                     <label htmlFor='LoginForm_password'></label>
                     <input className='input' required id="password-field" name='password' type="password"  placeholder='Password'></input>
                 </div>
-                <button>Login</button>
+                <button className="login-button">Login</button>
                 <div className="sign-up-block">
-                    <p>Need an Account?</p>
+                    <p className="account-suggestion">Need an Account?</p>
                     <p className="signup-link">
-                        <Link to={`/register`}>
+                        <Link to={`/register`} className="link">
                             Sign up!
                         </Link>
                     </p>

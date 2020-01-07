@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom'
-import LoginPage from '../src/routes/LoginPage'
-import RegistrationPage from '../src/routes/RegistrationPage'
+import LoginPage from '../src/routes/LoginPage/LoginPage'
+import RegistrationPage from '../src/routes/RegistrationPage/RegistrationPage'
 import TaskListMain from './routes/TaskListMain/TaskListMain'
 import './App.css';
 import PrivateRoute from '../src/Utils/PrivateRoute'
