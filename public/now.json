@@ -1,12 +1,20 @@
 {
     "version": 2,
-<<<<<<< HEAD
-    "name": "Tally-ho",
-=======
+    "alias": "sophie-tally-ho-app",
     "name": "Tally-ho!",
->>>>>>> 221c4d494934f5552e39b7edb529f7809559e4b3
     "routes": [
         { "handle": "filesystem" },
-        { "src": "/.*", "dest": "/index.html" }
+        {
+            "src": "^/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "^/manifest.json",
+            "dest": "/manifest.json"
+        },
+        {
+            "src": ".*",
+            "dest": "/index.html"
+        }
     ]
-  }
+}
