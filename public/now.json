@@ -1,6 +1,10 @@
 {
     "version": 2,
+<<<<<<< HEAD
     "name": "Tally-ho",
+=======
+    "name": "Tally-ho!",
+>>>>>>> 221c4d494934f5552e39b7edb529f7809559e4b3
     "routes": [
         { "handle": "filesystem" },
         { "src": "/.*", "dest": "/index.html" }
