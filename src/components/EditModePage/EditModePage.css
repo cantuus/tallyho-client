@@ -2,10 +2,8 @@
     background: none;
     box-shadow: none;
     display:inline-block;
-    padding:0.3em 1.2em;
-    margin:0 0.3em 0.3em 0;
     border: 0.1em solid #0f4c75;
-    border-radius:1em;
+    border-radius:2rem;
     box-sizing: border-box;
     text-decoration:none;
     font-weight:300;
@@ -17,6 +15,7 @@
 
 .toggle-save:hover {
     background-color:#fcf9ea;
+    border-color: #ff8a5c;
     color: #ff8a5c;
 }
 
@@ -24,10 +23,8 @@
     background: none;
     box-shadow: none;
     display:inline-block;
-    padding:0.3em 1.2em;
-    margin:0 0.3em 0.3em 0;
     border: 0.1em solid #ff8a5c;
-    border-radius:1em;
+    border-radius:2rem;
     box-sizing: border-box;
     text-decoration:none;
     font-weight:300;
@@ -37,7 +34,7 @@
     transition: all 0.2s;
 }
 
-.task-form-container {
+.edit-form-container {
     margin-bottom: 1rem;
 }
 
@@ -46,17 +43,22 @@ label {
 }
 
 input {
-    border-radius: 25px;
+    box-shadow: none;
+    border-radius: 2rem;
     border: 2px solid #ff8a5c;
-    padding: 20px; 
-    width: 280px;
-    height: 6px;    
+    height: 6px;
 }
 
-@media screen and (min-width: 800px) {
-    #edit-form {
-        margin-left: 38em;
-        margin-right: 36.5em;
-        }
+input, .toggle-save, .toggle-saved {
+    padding: 20px;
+    margin: 20px;
+}
+
+/*  Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .edit-form {
+        margin-left: 44rem;
+        margin-right: 44rem;
     }
+}
 

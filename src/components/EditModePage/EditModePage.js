@@ -27,8 +27,8 @@ export default class EditForm extends Component {
         if (taskTitle === 0) {
             return "Task Title is required"
         }
-        else if (taskTitle.length < 1 || taskTitle.length > 12) {
-            return 'Task Title must between 1 and 12 characters long'
+        else if (taskTitle.length < 1 || taskTitle.length > 30) {
+            return 'Task Title must between 1 and 30 characters long'
         }
     }
 
@@ -99,19 +99,19 @@ export default class EditForm extends Component {
 
     render() {
         return (
-            <div className="task-form-container">
-                <form id="edit-form" className="task-form" onSubmit={this.handleTaskSave}>
+            <div className="edit-form-container">
+                <form className="task-form edit-form" onSubmit={this.handleTaskSave}>
                     <label htmlFor="task-title">Edit Title
                         {this.state.taskTitle.touched && <p className="error">{this.validateTaskTitle()}</p>}
                     </label>
-                    <input type="text" value={this.state.taskTitle.value} onChange={(e) => {
+                    <input className="edit-input" type="text" value={this.state.taskTitle.value} onChange={(e) => {
                         console.log();
                         this.setTaskTitle(e.currentTarget.value);
                     }} />
-                    <label htmlFor="task-image">Edit Image
+                    <label htmlFor="task-image">Edit Image (Must be an Image address URL)
                         {this.state.taskImage.touched && <p className="error">{this.validateTaskImage()}</p>}
                     </label>
-                    <input type="text" value={this.state.taskImage.value} onChange={e => this.setTaskImage(e.target.value)} />
+                    <input className="edit-input" type="text" value={this.state.taskImage.value} onChange={e => this.setTaskImage(e.target.value)} />
                     <button className={this.toggleSave()} disabled={
                         this.validateTaskTitle() ||
                         this.validateTaskImage()

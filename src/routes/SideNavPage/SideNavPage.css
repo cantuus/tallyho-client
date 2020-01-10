@@ -1,6 +1,6 @@
 .side-page-nav {
     position: fixed;
-    top: 86px;
+    top: 6rem;
     left: 3px;
     right: 0;
     z-index: 10;
@@ -28,26 +28,27 @@
     background-color:#0f4c75;
     text-align:center;
     transition: all 0.2s;
-    }
+}
 
 .side-button:hover{
     background-color:#fcf9ea;
     color: #ff8a5c;
     border: 0.1em solid
-    }
+}
 
 
-@media screen and (min-width: 500px) {
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
     .side-page-nav {
-        top: 135px;
-        left: 57px;
-        }
+        top: 9rem;
+        left: 2rem;
     }
+}
 
-
-@media screen and (min-width: 800px) {
-.side-page-nav {
-    top: 135px;
-    left: 292px;
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .side-page-nav {
+        top: 10rem;
+        left: 10rem;
     }
 }

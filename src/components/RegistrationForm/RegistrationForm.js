@@ -46,7 +46,7 @@ export default class RegistrationForm extends Component {
                 </div>
                 <div className='password'>
                     <label htmlFor='RegistrationForm_password'></label>
-                    <input className='front-input' required name='password' type='text' id='RegistrationForm_password' placeholder='New User Password'></input>
+                    <input className='front-input' required name='password' type='password' id='RegistrationForm_password' placeholder='New User Password'></input>
                 </div>
                 <button className="register-button">
                     Register!

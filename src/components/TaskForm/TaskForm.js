@@ -22,8 +22,8 @@ export default class TaskForm extends Component {
         if (taskTitle === 0) {
             return "Task Title is required"
         }
-        else if (taskTitle.length < 1 || taskTitle.length > 12) {
-            return 'Task Title must between 1 and 12 characters long'
+        else if (taskTitle.length < 1 || taskTitle.length > 30) {
+            return 'Task Title must between 1 and 30 characters long'
         }
     }
 
@@ -63,14 +63,14 @@ export default class TaskForm extends Component {
                 {this.state.taskTitle.touched &&
                             <p className="error">{this.validateTaskTitle()}</p>}
                     </label>
-                    <input required id="task-title" type="text" value={this.state.taskTitle.value}
+                    <input required className="task-title" type="text" value={this.state.taskTitle.value}
                         onChange={e => this.setTaskTitle(e.target.value)} />
 
                     <label htmlFor="task-image">Add Image
                 {this.state.taskImage.touched &&
                             <p className="error">{this.validateTaskImage()}</p>}
                     </label>
-                    <input required id="task-image" type="text" value={this.state.taskImage.value}
+                    <input required className="task-image" type="text" value={this.state.taskImage.value}
                         onChange={e => this.setTaskImage(e.target.value)} />
 
                     <button className="add-button" disabled={

@@ -33,21 +33,21 @@
     color: #ff8a5c;
     }
 
-@media screen and (min-width: 500px) {
-.registration-form {
-    margin-right: 7em;
-    margin-left: 7em;
-    padding-top: 3em;
-    padding-bottom: 3em;
-    }
-    
-    }
-
-@media screen and (min-width: 800px) {
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
     .registration-form {
-        margin-right: 35em;
-        margin-left: 35em;
+        margin-right: 7em;
+        margin-left: 7em;
         padding-top: 3em;
         padding-bottom: 3em;
-        }
+    }
+}
+
+/*  Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .registration-form {
+        margin: 0 30rem;
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
 }
