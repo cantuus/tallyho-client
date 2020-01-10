@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Tallyho
 
-In the project directory, you can run:
+![screencapture-localhost-3000-2020-01-10-15_15_23](https://user-images.githubusercontent.com/47515086/72193025-9bdc5d80-33bc-11ea-990f-189f6b396070.png)
 
-### `npm start`
+### What's Tallyho
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Tallyho is a visual schedule application where Users can sign up for an account and make a visual schedule to cater to their child's day routine. This minimizes the labor of making a visual schedule or PECS (Picture Exchange Communication System) to use an easy accessible online aplication.  The User can create multiple tasks to build their schedule as well check off individual tasks when tasks are completed. The User can delete a task of their choosing.  The User can edit and save multiple tasks on the same page. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Live app] (https://sophie-tally-ho-app.now.sh/)
 
-### `npm test`
+### Built on:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> ReactJS, CSS
 
-### `npm run build`
+### Core Features
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Ability to create/login with user accounts
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+> Ability to create/edit/delete tasks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> Users can check off tasks
 
-### `npm run eject`
+## Upcoming features
+ > User can click and drag tasks to rearrange the order
+ 
+ > User will be able to upload a personal image from their local computer or have the option to take a picture using their
+  mobile device's camera
+ 
+ > After all tasks are checked off, it will show a congratulatory animation for completing the schedule 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Connect with me
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> [My Linkedin](https://www.linkedin.com/in/sophiakoeut/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+> [My Email](koeutsophia@gmail.com)
