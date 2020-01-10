@@ -11,7 +11,6 @@ export default class TaskListItem extends Component {
 
     handleClickDelete = () => {
         const taskId = this.props.task.id;
-        const thisProps = this.props;
 
         TallyhoApiService.getTaskToDelete(taskId)
             .then(() => {
