@@ -14,11 +14,6 @@ export default class EditForm extends Component {
         toggleSave: false
     }
 
-
-
-
-    //todo: state to determine if it's been changed or not
-
     setTaskTitle = taskTitle => {
         this.setState({ taskTitle: { value: taskTitle, touched: true } });
     }
@@ -125,7 +120,5 @@ export default class EditForm extends Component {
             </div>
         )
     }
-
-    //TODO: get the value when the submit is run rather than using an ONCHANGE
 
 }

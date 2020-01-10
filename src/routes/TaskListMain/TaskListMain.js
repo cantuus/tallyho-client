@@ -57,7 +57,6 @@ export default class TaskListMain extends Component {
     }
 
     saveTaskSucess = () => {
-        console.log('baby');
         TallyhoApiService.getTasks()
             .then(response => {
                 this.renderTasks(response)
@@ -88,9 +87,6 @@ export default class TaskListMain extends Component {
                 console.error({ error })
             })
     }
-
-
-    //todo: going to add context
 
 
 

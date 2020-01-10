@@ -52,14 +52,13 @@ export default class TaskListItem extends Component {
         return imageClass
     }
 
-    //https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ-kMbFqjiAXzJ3W9-ODBgavLSogiAblyrWMF5ia7HfQBAt3Qy&s
 
     render() {
         return (
             <section className="task-item">
                 <h3 className="task-title">{this.props.task.title}</h3>
                 <img className={this.changeImageClass()} onClick={() => this.props.handleClickToggle(this.props.task)} src={this.changeImage()} alt={`task of ${this.props.task.image}`} />
-                <div className="task-delete" onClick={() => this.handleClickDelete()}><i class="fas fa-trash-alt"></i></div>
+                <div className="task-delete" onClick={() => this.handleClickDelete()}><i className="fas fa-trash-alt"></i></div>
             </section>
         )
     }

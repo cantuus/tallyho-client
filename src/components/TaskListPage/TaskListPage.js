@@ -6,7 +6,7 @@ import './TaskListPage.css'
 
 export default class TaskListPage extends Component {
 
-    
+
     componentDidMount() {
         TallyhoApiService.getTasks()
             .then(response => {
@@ -21,7 +21,7 @@ export default class TaskListPage extends Component {
     renderTasks() {
         const tasks = this.props.tasks
 
-        if (this.props.editModeOn) {
+        if ( this.props.editModeOn ) {
             return tasks.map(task =>
                 <EditModePage
                     key={task.id}
@@ -29,7 +29,8 @@ export default class TaskListPage extends Component {
                     saveTaskSucess={this.props.saveTaskSucess} />
             )
         }
-        else {
+
+        if ( tasks.length > 0 ) {
             return tasks.map(task =>
                 <TaskItem
                     key={task.id}
@@ -37,6 +38,15 @@ export default class TaskListPage extends Component {
                     handleDeleteTask={this.props.handleDeleteTask}
                     handleClickToggle={this.props.handleClickToggle}
                 />
+            )
+        }
+
+        if ( tasks.length === 0 ) {
+            return (
+                <div className="empty-list">
+                    <h2>Woops there's nothing here</h2>
+                    <h3>Try adding a Task</h3>
+                </div>
             )
         }
 
