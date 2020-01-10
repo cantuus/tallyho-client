@@ -41,15 +41,6 @@ export default class TaskListPage extends Component {
             )
         }
 
-        if ( tasks.length === 0 ) {
-            return (
-                <div className="empty-list">
-                    <h2>Woops there's nothing here</h2>
-                    <h3>Try adding a Task</h3>
-                </div>
-            )
-        }
-
     }
 
 

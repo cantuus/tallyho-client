@@ -105,7 +105,7 @@ export default class EditForm extends Component {
                         {this.state.taskTitle.touched && <p className="error">{this.validateTaskTitle()}</p>}
                     </label>
                     <input className="edit-input" type="text" value={this.state.taskTitle.value} onChange={(e) => {
-                        console.log();
+    
                         this.setTaskTitle(e.currentTarget.value);
                     }} />
                     <label htmlFor="task-image">Edit Image (Must be an Image address URL)

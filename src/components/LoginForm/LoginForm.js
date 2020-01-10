@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom'
 import './LoginForm.css'
 
 export default class LoginForm extends Component {
-    static defaultProps = {
-        onLoginSuccess: () => { }
-    };
 
     state = {
         error: null

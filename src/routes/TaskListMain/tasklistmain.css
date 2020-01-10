@@ -48,3 +48,14 @@ nav {
     display: flex;
     justify-content: space-between;
 }
+
+@media (min-width: 992px) {
+    .log-button {
+        font-size: 23px;
+    }
+    .tallyho-header {
+        font-size: 19px;
+    }
+ }
+
+

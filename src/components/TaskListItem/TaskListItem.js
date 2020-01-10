@@ -12,7 +12,6 @@ export default class TaskListItem extends Component {
     handleClickDelete = () => {
         const taskId = this.props.task.id;
         const thisProps = this.props;
-        console.log(thisProps);
 
         TallyhoApiService.getTaskToDelete(taskId)
             .then(() => {
@@ -25,9 +24,6 @@ export default class TaskListItem extends Component {
 
     changeImage = () => {
         let imageUrl;
-
-        let passProps = this.props;
-        console.log('this is passprops ', passProps)
 
         if (this.props.task.checked) {
             imageUrl = checkmark;
@@ -58,7 +54,7 @@ export default class TaskListItem extends Component {
             <section className="task-item">
                 <h3 className="task-title">{this.props.task.title}</h3>
                 <img className={this.changeImageClass()} onClick={() => this.props.handleClickToggle(this.props.task)} src={this.changeImage()} alt={`task of ${this.props.task.image}`} />
-                <div className="task-delete" onClick={() => this.handleClickDelete()}><i className="fas fa-trash-alt"></i></div>
+                <div className="task-delete" onClick={() => this.handleClickDelete()}><i className="fas fa-trash-alt fa-lg"></i></div>
             </section>
         )
     }

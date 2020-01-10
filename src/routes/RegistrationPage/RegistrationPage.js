@@ -10,10 +10,10 @@ export default class RegistrationPage extends Component {
         },
     }
 
-    handleRegistrationSucess = user => {
-        const { location, history } = this.props
-        const destination = (location.state || {}).from || '/login'
-        history.push(destination)
+    handleRegistrationSuccess = () => {
+        const { location, history } = this.props;
+        const destination = (location.state || {}).from || '/login';
+        history.push(destination);
     }
 
     render() {
@@ -21,7 +21,7 @@ export default class RegistrationPage extends Component {
             <section className='registration-page'>
                 <h2 className="registration-header">Tallyho!</h2>
                 <RegistrationForm
-                    onRegisterSuccess={this.handleRegistrationSucess}
+                    onRegistrationSuccess={this.handleRegistrationSuccess}
                 />
             </section>
         )

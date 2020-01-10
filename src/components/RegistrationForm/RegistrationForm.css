@@ -26,12 +26,12 @@
     background-color:#ff8a5c;
     text-align:center;
     transition: all 0.2s;
-    }
+}
 
 .register-button:hover{
     background-color:#fcf9ea;
     color: #ff8a5c;
-    }
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {

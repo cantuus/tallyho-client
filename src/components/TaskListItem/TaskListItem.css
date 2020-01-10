@@ -34,4 +34,19 @@
         margin-left: -4rem;
         margin-right: -3rem;
     }
+
+}
+
+@media screen and (min-width: 992px) {
+    .task-image {
+        max-height: 14rem;
+    }
+}
+
+
+
+@media (min-width: 1200px) { 
+    .task-image {
+        max-height: 14rem;
+    }
 }

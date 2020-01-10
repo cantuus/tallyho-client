@@ -66,7 +66,7 @@ export default class TaskForm extends Component {
                     <input required className="task-title" type="text" value={this.state.taskTitle.value}
                         onChange={e => this.setTaskTitle(e.target.value)} />
 
-                    <label htmlFor="task-image">Add Image
+                    <label htmlFor="task-image">Add Image (Must be an Image address URL)
                 {this.state.taskImage.touched &&
                             <p className="error">{this.validateTaskImage()}</p>}
                     </label>

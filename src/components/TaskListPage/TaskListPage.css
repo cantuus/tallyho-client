@@ -23,15 +23,15 @@
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
     .task-list-page {
-        margin-left: 10rem;
-        margin-right: 10rem;
+        margin-left: 15rem;
+        margin-right: 15rem;
     }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
     .task-list-page {
-        margin-left: 20rem;
-        margin-right: 20rem;
+        margin-left: 30rem;
+        margin-right: 30rem;
     }
 }

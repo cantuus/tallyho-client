@@ -4,18 +4,11 @@ import { Link } from 'react-router-dom'
 import './RegistrationForm.css'
 
 export default class RegistrationForm extends Component {
-    static defaultProps = {
-        onRegistrationSuccess: () => { }
-    }
-
     state = { error: null }
 
     handleSubmit = event => {
         event.preventDefault()
         const { email, password } = event.target
-
-        console.log('registration form submitted')
-        console.log({ email, password })
 
         this.setState({ error: null })
         AuthApiService.postUser({

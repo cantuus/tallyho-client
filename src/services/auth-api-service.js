@@ -1,5 +1,5 @@
 import config from '../config'
-console.log(config);
+
 const AuthApiService = {
     postLogin(credentials) {
         return fetch(`${config.API_ENDPOINT}/auth/login`, {

@@ -52,18 +52,17 @@ label {
     border: 0.1em solid
     }
 
-@media screen and (min-width: 500px) {
-    .task-form {
-    }
+@media screen and (min-width: 768px) {
     .task-form-page {
-        margin-top: 10em;
+        margin-top: 8rem;
+        margin-left: 35rem;
+        margin-right: 35rem;
     }
 }
 
-@media screen and (min-width: 800px) {
-        .task-form {
-        }
-        .task-form-page {
-            margin-top: 10em;
-        }
-        }
+@media screen and (min-width: 992px) {
+    .task-form-page {
+        margin-left: 30rem;
+        margin-right: 30rem;
+    }
+}
