@@ -3,12 +3,12 @@ import { BrowserRouter } from 'react-router-dom'
 import LoginPage from '../src/routes/LoginPage/LoginPage'
 import RegistrationPage from '../src/routes/RegistrationPage/RegistrationPage'
 import TaskListMain from './routes/TaskListMain/TaskListMain'
-import './App.css';
 import PrivateRoute from '../src/Utils/PrivateRoute'
 import PublicRoute from '../src/Utils/PublicOnlyRoute'
 import LandingPage from '../src/components/LandingPage/LandingPage'
 import NotFoundPage from '../src/components/NotFoundPage/NotFoundPage'
 import { Route, Switch } from 'react-router-dom'
+import './App.css';
 
 class App extends Component {
 

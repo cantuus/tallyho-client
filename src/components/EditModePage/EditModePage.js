@@ -28,7 +28,7 @@ export default class EditForm extends Component {
             return "Task Title is required"
         }
         else if (taskTitle.length < 1 || taskTitle.length > 30) {
-            return 'Task Title must between 1 and 30 characters long'
+            return "Task Title must between 1 and 30 characters long"
         }
     }
 
@@ -38,7 +38,7 @@ export default class EditForm extends Component {
             return "Task Image is required"
         }
         else if (taskImage.length < 6) {
-            return 'Task Image must larger than 6 characters'
+            return "Task Image must larger than 6 characters"
         }
         else if (!taskImage.includes('https://')) {
             return `Task Image must be a Url starting with 'https://'`
@@ -87,7 +87,7 @@ export default class EditForm extends Component {
         let save;
 
         if(this.state.toggleSave) {
-            save = 'Saved!'
+            save = "Saved!"
         }
         
         else{

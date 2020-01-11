@@ -59,4 +59,3 @@ export default class TaskListItem extends Component {
     }
 }
 
-//src=use a terniary to render image based on the checked value

@@ -17,7 +17,7 @@ class App extends Component {
                     the hassle. Simple and quick signup with just an email and password to start the day. Add multiple tasks with a title and image and you're on your way!</p>
                 <p className="description paragraph-three">So put down that scissor and glue and let's tackle the day together!</p>
                 <h2 className="slogan">TALLYHO!</h2>
-                <img className="children-play" src={children} alt='children playing follow the leader'></img> 
+                <img className="children-play" src={children} alt="children playing follow the leader"></img> 
                 <section className="link-to-app">
                     <h3>
                         Get Started Here!

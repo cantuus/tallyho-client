@@ -42,13 +42,14 @@ nav {
     padding-top: 6px;
     background-color: #49beb7;
     text-decoration: none;
-  }
+}
 
 .nav-bar {
     display: flex;
     justify-content: space-between;
 }
 
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .log-button {
         font-size: 23px;
@@ -56,6 +57,6 @@ nav {
     .tallyho-header {
         font-size: 19px;
     }
- }
+}
 
 

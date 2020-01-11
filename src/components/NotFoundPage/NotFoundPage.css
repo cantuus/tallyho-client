@@ -13,7 +13,7 @@
 @media screen and (min-width: 800px) {
 .oh-no-child {
     max-height: 300px;
-}
+    }
 
 }
 
@@ -25,4 +25,5 @@
 .oh-no-child {
         max-height: 300px;
     }
+
 }

@@ -1,11 +1,9 @@
 import config from '../config'
-// import jwt
 
 const TokenService = {
   saveAuthToken(token) {
     window.localStorage.setItem(config.TOKEN_KEY, token)
   },
-  // todo: use this to retrieve jwt auth token from local storage
   getAuthToken() {
     return window.localStorage.getItem(config.TOKEN_KEY)
   },

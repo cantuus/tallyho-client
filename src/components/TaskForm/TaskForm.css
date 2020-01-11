@@ -44,14 +44,15 @@ label {
     background-color:#0f4c75;
     text-align:center;
     transition: all 0.2s;
-    }
+}
 
 .add-button:hover{
     background-color:#fcf9ea;
     color: #ff8a5c;
     border: 0.1em solid
-    }
+}
 
+/* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
     .task-form-page {
         margin-top: 8rem;
@@ -60,6 +61,7 @@ label {
     }
 }
 
+/*  Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     .task-form-page {
         margin-left: 30rem;
