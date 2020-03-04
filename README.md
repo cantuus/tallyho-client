@@ -9,6 +9,12 @@ Tallyho is a visual schedule application where Users can sign up for an account 
 
 [Live app] (https://sophie-tally-ho-app.now.sh/)
 
+### Demo Login:
+
+>Username: test@gmail.com
+
+>Password: !Testing123
+
 ### Built on:
 
 > ReactJS, CSS
