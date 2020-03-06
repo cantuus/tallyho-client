@@ -49,6 +49,11 @@ nav {
     justify-content: space-between;
 }
 
+.tallyho-logo {
+    text-decoration: none;
+    color: black;
+}
+
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .log-button {

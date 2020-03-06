@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
+import { Link } from 'react-router-dom'
 import './RegistrationPage.css'
 
 export default class RegistrationPage extends Component {
@@ -19,7 +20,11 @@ export default class RegistrationPage extends Component {
     render() {
         return (
             <section className="registration-page">
-                <h2 className="registration-header">Tallyho!</h2>
+                <h2 className="registration-header">
+                    <Link to={'/login'} className="tallyho-logo">
+                        Tallyho!
+                    </Link>
+                </h2>
                 <RegistrationForm
                     onRegistrationSuccess={this.handleRegistrationSuccess}
                 />

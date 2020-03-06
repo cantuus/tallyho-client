@@ -113,7 +113,11 @@ export default class TaskListMain extends Component {
             <div>
                 <nav role="navigation" className="nav-bar">
                     <div className="tallyho-header">
-                        <h1>Tallyho!</h1>
+                        <h1>
+                            <Link to={'/login'} className="tallyho-logo">
+                                Tallyho!
+                            </Link>
+                        </h1>
                     </div>
                     <div className="log-button">
                         <Link
