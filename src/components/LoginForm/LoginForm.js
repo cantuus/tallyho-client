@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import TokenService from '../../services/token-service'
 import { Link } from 'react-router-dom'
+import UserContext from '../../contexts/UserContext'
 import './LoginForm.css'
 
 export default class LoginForm extends Component {
@@ -9,6 +10,8 @@ export default class LoginForm extends Component {
     state = {
         error: null
     }
+
+    static contextType = UserContext
 
     handleSubmitJwtAuth = event => {
         event.preventDefault()
@@ -25,7 +28,7 @@ export default class LoginForm extends Component {
             .then(res => {
                 email.value = ' '
                 password.value = ' '
-                TokenService.saveAuthToken(res.authToken)
+                this.context.processLogin(res.authToken)
                 this.props.onLoginSuccess()
             })
             .catch(res => {
