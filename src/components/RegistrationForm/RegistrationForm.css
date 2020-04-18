@@ -1,3 +1,10 @@
+:root {
+    --blue-color: #80c3d2; 
+    --orange-color: #ff8454;
+    --green-color: #88c87b;
+    --teal-color: #f0cd3a;
+  }
+
 .registration-form {
     background-color: #badfdb;
     margin-right: 2em;
@@ -29,7 +36,7 @@
 }
 
 .register-button:hover{
-    background-color:#fcf9ea;
+    background-color:white;
     color: #ff8a5c;
 }
 

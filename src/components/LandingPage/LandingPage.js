@@ -10,30 +10,26 @@ class App extends Component {
             <div className="landing-page">
                 <div className="img-container">
                     <div className="banner-title">Tallyho!</div>
+                    <p className="description">~An accessible visual schedule for children~</p>
+                    <section className="link-to-app">
+                        <h3>
+                            Get Started Here!
+                </h3>
+                        <p>
+                            <Link to={`/register`} className="register-button">
+                                Sign up
+                        </Link>
+                        </p>
+                        <h3>
+                            Been here already?
+                </h3>
+                        <p>
+                            <Link to={`/login`} className="login-button">
+                                Login
+                        </Link>
+                        </p>
+                    </section>
                 </div>
-
-
-
-
-
-                <section className="link-to-app">
-                    <h3>
-                        Get Started Here!
-                </h3>
-                    <p>
-                        <Link to={`/register`} className="register-button">
-                            Sign up
-                        </Link>
-                    </p>
-                    <h3>
-                        Been here already?
-                </h3>
-                    <p>
-                        <Link to={`/login`} className="login-button">
-                            Login
-                        </Link>
-                    </p>
-                </section>
             </div>
         )
     }
