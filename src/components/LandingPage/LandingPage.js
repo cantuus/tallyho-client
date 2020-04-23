@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import './LandingPage.css'
-import children from '../../img/IMGBIN_play-child-follow-the-leader-song-game-png_64H62UxU (1).png'
 
 class App extends Component {
 

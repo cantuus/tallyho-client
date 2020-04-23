@@ -1,5 +1,13 @@
+:root {
+    --blue-color: #80c3d2; 
+    --orange-color: #ff8454;
+    --green-color: #88c87b;
+    --yellow-color: #f0cd3a;
+  }
+
+
 .task-item {
-    background-color: #ff8a5c;
+    background-color: var(--orange-color);
     padding-top: 1rem;
     padding-bottom: 1rem;
     margin-bottom: 1rem;

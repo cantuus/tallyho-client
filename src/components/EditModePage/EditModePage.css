@@ -1,20 +1,27 @@
+:root {
+    --blue-color: #80c3d2; 
+    --orange-color: #ff8454;
+    --green-color: #88c87b;
+    --yellow-color: #f0cd3a;
+  }
+
 .toggle-save {
     background: none;
     box-shadow: none;
     display:inline-block;
-    border: 0.1em solid #0f4c75;
+    border: 0.1em solid var(--yellow-color);
     border-radius:2rem;
     box-sizing: border-box;
     text-decoration:none;
     font-weight:300;
-    color:#fcf9ea;
-    background-color:#0f4c75;
+    color:white;
+    background-color: var(--yellow-color);
     text-align:center;
     transition: all 0.2s;
 }
 
 .toggle-save:hover {
-    background-color:#fcf9ea;
+    background-color: white;
     border-color: #ff8a5c;
     color: #ff8a5c;
 }
@@ -23,13 +30,13 @@
     background: none;
     box-shadow: none;
     display:inline-block;
-    border: 0.1em solid #ff8a5c;
+    border: 0.1em solid var(--green-color);
     border-radius:2rem;
     box-sizing: border-box;
     text-decoration:none;
     font-weight:300;
-    color:#fcf9ea;
-    background-color:#ff8a5c;
+    color:white;
+    background-color:var(--green-color);
     text-align:center;
     transition: all 0.2s;
 }

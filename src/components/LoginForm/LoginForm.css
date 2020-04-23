@@ -2,11 +2,11 @@
     --blue-color: #80c3d2; 
     --orange-color: #ff8454;
     --green-color: #88c87b;
-    --teal-color: #f0cd3a;
+    --yellow-color: #f0cd3a;
   }
 
 .login-form {
-    background-color: #badfdb;
+    background-color: var(--green-color);
     margin-right: 2em;
     margin-left: 2em;
     padding-top: 1em;
@@ -42,13 +42,13 @@
     display:inline-block;
     padding:0.3em 1.2em;
     margin:0 0.3em 0.3em 0;
-    border: 0.1em solid #ff8a5c;
+    border: 0.1em solid var(--orange-color);
     border-radius:1em;
     box-sizing: border-box;
     text-decoration:none;
     font-weight:300;
     color:#FFFFFF;
-    background-color:#ff8a5c;
+    background-color:var(--orange-color);
     text-align:center;
     transition: all 0.2s;
 }
@@ -64,7 +64,7 @@
 
 .front-input {
     border-radius: 25px;
-    border: 2px solid #0f4c75;
+    border: 2px solid var(--orange-color);
     padding: 20px; 
     width: 200px;
     height: 6px;    

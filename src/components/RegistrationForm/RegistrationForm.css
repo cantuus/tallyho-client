@@ -2,11 +2,11 @@
     --blue-color: #80c3d2; 
     --orange-color: #ff8454;
     --green-color: #88c87b;
-    --teal-color: #f0cd3a;
+    --yellow-color: #f0cd3a;
   }
 
 .registration-form {
-    background-color: #badfdb;
+    background-color: var(--green-color);
     margin-right: 2em;
     margin-left: 2em;
     padding-top: 1em;

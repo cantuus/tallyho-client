@@ -21,7 +21,7 @@ export default class RegistrationPage extends Component {
         return (
             <section className="registration-page">
                 <h2 className="registration-header">
-                    <Link to={'/login'} className="tallyho-logo">
+                    <Link to={'/login'} className="tallyho-logo-front">
                         Tallyho!
                     </Link>
                 </h2>

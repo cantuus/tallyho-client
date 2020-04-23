@@ -1,3 +1,9 @@
+:root {
+    --blue-color: #80c3d2; 
+    --orange-color: #ff8454;
+    --green-color: #88c87b;
+    --yellow-color: #f0cd3a;
+  }
 
 .task-form-page {
     display: flex;
@@ -35,19 +41,19 @@ label {
     display:inline-block;
     padding:0.3em 1.2em;
     margin:0 0.3em 0.3em 0;
-    border: 0.1em solid #0f4c75;
+    border: 0.1em solid var(--yellow-color);
     border-radius:1em;
     box-sizing: border-box;
     text-decoration:none;
     font-weight:300;
-    color:#fcf9ea;
-    background-color:#0f4c75;
+    color:white;
+    background-color: var(--yellow-color);
     text-align:center;
     transition: all 0.2s;
 }
 
 .add-button:hover{
-    background-color:#fcf9ea;
+    background-color:white;
     color: #ff8a5c;
     border: 0.1em solid
 }

@@ -1,10 +1,17 @@
+:root {
+    --blue-color: #80c3d2; 
+    --orange-color: #ff8454;
+    --green-color: #88c87b;
+    --yellow-color: #f0cd3a;
+  }
+
 .tallyho-header {
     font-family: 'Indie Flower', cursive;
     margin-left: 1em;
 }
 
 .toggle-log {
-    color: black;
+    color: white;
     text-decoration: none;
     padding-top: 2rem;
     padding-bottom: 2.2rem;
@@ -17,18 +24,19 @@
     background: none;
     box-shadow: none;
     display:inline-block;
-    border: 0.1em solid #49beb7;
+    border: 0.1em solid var(--blue-color);
     box-sizing: border-box;
     text-decoration:none;
     font-weight:300;
     color:#FFFFFF;
-    background-color:#49beb7;
+    background-color: var(--blue-color);
     text-align:center;
     transition: all 0.2s;
 }
 
 .toggle-log:hover{
-    background-color:#fcf9ea;
+    background-color: white;
+    color: var(--blue-color);
 }
 
 nav {
@@ -40,7 +48,7 @@ nav {
     display: flex;
     justify-content: flex-end;
     padding-top: 6px;
-    background-color: #49beb7;
+    background-color: var(--blue-color);
     text-decoration: none;
 }
 
@@ -50,6 +58,11 @@ nav {
 }
 
 .tallyho-logo {
+    text-decoration: none;
+    color: white;
+}
+
+.tallyho-logo-front {
     text-decoration: none;
     color: black;
 }
