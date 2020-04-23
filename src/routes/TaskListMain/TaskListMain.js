@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import SideNavPage from '../SideNavPage/SideNavPage'
 import TaskForm from '../../components/TaskForm/TaskForm'
 import TallyhoApiService from '../../services/tallyho-api-service'
+import UserContext from '../../contexts/UserContext'
 import './TaskListMain.css'
 
 export default class TaskListMain extends Component {
@@ -15,8 +16,10 @@ export default class TaskListMain extends Component {
         addModeOn: false
     }
 
+    static contextType = UserContext;
+
     handleLogoutClick = () => {
-        TokenService.clearAuthToken()
+        this.context.processLogout()
     }
 
     renderTasks = response => {
