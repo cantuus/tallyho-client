@@ -1,7 +1,7 @@
 
 ## Tallyho
 
-![screencapture-localhost-3000-2020-01-10-15_15_23](https://user-images.githubusercontent.com/47515086/72193025-9bdc5d80-33bc-11ea-990f-189f6b396070.png)
+![Landingpage](src/img/landing-page.png "Landing Page")
 
 ### What's Tallyho
 
