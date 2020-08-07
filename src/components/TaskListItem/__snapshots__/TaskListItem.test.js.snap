@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskListItem show checkmark image when checked is true 1`] = `ShallowWrapper {}`;
+
+exports[`TaskListItem show task image when checked is false  1`] = `ShallowWrapper {}`;
